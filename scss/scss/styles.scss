@@ -1,7 +1,12 @@
 //Documented at https://sass-lang.com/guide 
 
-$background-color:gray;
+@use 'variables' as var;
+@use 'mixins';
 
 body{
-    background-color:$background-color;
+    background-color: var.$background-color;
 }
+
+.circle1{@include mixins.circle}
+.circle2{@include mixins.circle('blue')}
+.circle3{@include mixins.circle('green')}

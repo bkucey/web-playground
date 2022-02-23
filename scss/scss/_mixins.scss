@@ -1,0 +1,8 @@
+@use 'variables' as var;
+
+@mixin circle($color:red){
+    border-radius:50%;
+    width:var.$circle-diameter;
+    height:var.$circle-diameter;
+    background-color: $color;
+}

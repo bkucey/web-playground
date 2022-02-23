@@ -1,5 +1,26 @@
 body {
-  background-color: gray;
+  background-color: #C14242;
+}
+
+.circle1 {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+.circle2 {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: "blue";
+}
+
+.circle3 {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: "green";
 }
 
 /*# sourceMappingURL=styles.css.map */
