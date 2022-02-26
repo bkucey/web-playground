@@ -1,12 +1,26 @@
-//Documented at https://sass-lang.com/guide 
+//Documented at https://sass-lang.com/guide
 
-@use 'variables' as var;
-@use 'mixins';
+@use "variables" as var;
+@use "mixins";
 
-body{
-    background-color: var.$background-color;
+body {
+  background-color: var.$background-color;
 }
 
-.circle1{@include mixins.circle}
-.circle2{@include mixins.circle('blue')}
-.circle3{@include mixins.circle('green')}
+.circle1 {
+  @include mixins.circle(red, var.$starting-top, var.$starting-left);
+}
+.circle2 {
+  @include mixins.circle(
+    blue,
+    var.$starting-top + var.$circle-diameter,
+    var.$starting-left + var.$circle-diameter
+  );
+}
+.circle3 {
+  @include mixins.circle(
+    green,
+    var.$starting-top + (2 * var.$circle-diameter),
+    var.$starting-left + (2 * var.$circle-diameter)
+  );
+}

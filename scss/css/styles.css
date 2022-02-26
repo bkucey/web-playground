@@ -4,23 +4,32 @@ body {
 
 .circle1 {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 50px;
+  height: 50px;
   background-color: red;
+  position: fixed;
+  top: 50px;
+  left: 25px;
 }
 
 .circle2 {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  background-color: "blue";
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  position: fixed;
+  top: 100px;
+  left: 75px;
 }
 
 .circle3 {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  background-color: "green";
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  position: fixed;
+  top: 150px;
+  left: 125px;
 }
 
 /*# sourceMappingURL=styles.css.map */
