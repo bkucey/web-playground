@@ -24,3 +24,13 @@ body {
     var.$starting-left + (2 * var.$circle-diameter)
   );
 }
+
+// Using this example https://sass-lang.com/documentation/at-rules/control/each 
+
+$header-sizes: 1, 2, 3, 4, 5, 6;
+
+@each $size in $header-sizes {
+  h#{$size} {
+    font-size: #{(7 - $size) * 1em};
+  }
+}
