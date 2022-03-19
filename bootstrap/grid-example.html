@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>Grid Example, BootStrap v4</title>
+
+    <!-- Import BootStrap from their sources -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- ----------------------------------- -->
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        .black-outline {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Grid Example</h1>
+    This page is an example of the <a href="https://getbootstrap.com/docs/4.6/layout/grid/">BootStrap Grid layout
+        (v4.6)</a>. This is Responsive (responds to screen size changing).
+    Give it a try: change the width of this page to see the responsiveness.
+
+    <hr>
+
+    These columns will stay the same width. They may overflow to a new line. 
+    <div class="container">
+        <div class="row">
+            <div class="col black-outline">
+                Equal width column
+            </div>
+            <div class="col black-outline">
+                Equal width column
+            </div>
+            <div class="col black-outline">
+                Equal width column
+            </div>
+            <div class="col black-outline">
+                Equal width column
+            </div>
+            <div class="col black-outline">
+                Equal width column
+            </div>
+            <div class="col black-outline">
+                Equal width column
+            </div>
+            <div class="col black-outline">
+                Equal width column
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    These columns overflow to the next line as the screen changes size. 
+    The `container` class used here keeps a constant column width (within each screen size class), changing the width abruptly. 
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 black-outline">
+                xl->1/6, lg->1/4, md->1/3, sm->1/2, xs->100%
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 black-outline">
+                xl->1/6, lg->1/4, md->1/3, sm->1/2, xs->100%
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 black-outline">
+                xl->1/6, lg->1/4, md->1/3, sm->1/2, xs->100%
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 black-outline">
+                xl->1/6, lg->1/4, md->1/3, sm->1/2, xs->100%
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 black-outline">
+                xl->1/6, lg->1/4, md->1/3, sm->1/2, xs->100%
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 black-outline">
+                xl->1/6, lg->1/4, md->1/3, sm->1/2, xs->100%
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    This differs from the example above, in the column width being fluid, to fill the whole screen. 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 black-outline">
+                xl->1/6, lg->1/4, md->1/3, sm->1/2, xs->100%
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 black-outline">
+                xl->1/6, lg->1/4, md->1/3, sm->1/2, xs->100%
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 black-outline">
+                xl->1/6, lg->1/4, md->1/3, sm->1/2, xs->100%
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 black-outline">
+                xl->1/6, lg->1/4, md->1/3, sm->1/2, xs->100%
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 black-outline">
+                xl->1/6, lg->1/4, md->1/3, sm->1/2, xs->100%
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 black-outline">
+                xl->1/6, lg->1/4, md->1/3, sm->1/2, xs->100%
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
