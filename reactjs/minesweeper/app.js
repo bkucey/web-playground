@@ -1,19 +1,23 @@
 const Tile = (props) =>
-    <button className={`tile ${props.status}`}>
+    <button className={`tile ${props.status}`} onClick={props.onClick}>
         Hi the name is {props.status.toString()}
     </button>
 
 class Board extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { board: [true, false] }
+        this.state = { board: true }
     }
 
     render() {
         return <div>
             This is the board.
-            <Tile status = "oarang"/>
-            {this.state.board.map((status,index) => <Tile key={index} status={status}/>)}
+            <Tile status={this.state.board} onClick={() => {
+                this.setState((state, props) =>
+                    ({ board: !state.board })
+                )
+            }} />
+
         </div>
     }
 }
