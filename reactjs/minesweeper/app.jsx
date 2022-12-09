@@ -1,6 +1,6 @@
 const Tile = (props) =>
     <button className={`tile ${props.status}`} onClick={props.onClick}>
-        Hi the name is {props.status.toString()}
+        {props.status.toString()}
     </button>
 
 class Board extends React.Component {
@@ -12,7 +12,7 @@ class Board extends React.Component {
     render() {
         return <div>
             This is the board.
-            <Tile status={this.state.board} onClick={() => {
+            <Tile status={this.state.board ? "red" : "blue"} onClick={() => {
                 this.setState((state, props) =>
                     ({ board: !state.board })
                 )
