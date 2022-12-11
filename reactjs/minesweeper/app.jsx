@@ -3,22 +3,65 @@ const Tile = (props) =>
         {props.status.toString()}
     </button>
 
+const BoardRow = (props) =>
+    <div className="row">
+        {props.entries.map((value, index) =>
+            <Tile
+                key={index}
+                status={value}
+                onClick={() => props.onClick(index)}
+            />
+        )}
+    </div>
+
 class Board extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { board: true }
+        const width = 5
+        let entries = []
+
+        for (let i = 0; i < width; i++) {
+            entries.push(false);
+        }
+        this.state = {
+            row: entries,
+            oneTile: false
+        }
+    }
+
+    flipRowAndNeighbors = (i) => {
+        //console.log(`called this.flipRowAndNeighbors (${i})`);
+        this.setState((state, props) => {
+            //console.log(`flipRowAndNeighbors state ${JSON.stringify(state)}`);
+            const indicesToChange = [i - 1, i, i + 1];
+            let newRow = state.row.map(x => x);
+            for (const index of indicesToChange) {
+                //console.log(`considering index:${index}`);
+                if (0 <= index && index < newRow.length) {
+                    //console.log(`index ${index} valid, switching`)
+                    newRow[index] = !newRow[index];
+                }
+            }
+            const output = {
+                row: newRow
+            };
+            //console.log(`flipRowAndNeighbors new state ${JSON.stringify(output)}`);
+            return output
+        })
     }
 
     render() {
-        return <div>
-            This is the board.
-            <Tile status={this.state.board ? "red" : "blue"} onClick={() => {
-                this.setState((state, props) =>
-                    ({ board: !state.board })
-                )
-            }} />
-
-        </div>
+        return (
+            <div>
+                <p>This is the board.</p>
+                <BoardRow
+                    entries={this.state.row}
+                    onClick={(i) => {
+                        this.flipRowAndNeighbors(i)
+                    }}
+                />
+            </div>
+        )
     }
 }
 
