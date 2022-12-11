@@ -1,7 +1,5 @@
 const Tile = (props) =>
-    <button className={`tile ${props.status}`} onClick={props.onClick}>
-        {props.status.toString()}
-    </button>
+    <button className={`tile ${props.status ? 'blue' : 'red'}`} onClick={props.onClick} />
 
 const BoardRow = (props) =>
     <div className="row">
@@ -23,9 +21,9 @@ class Board extends React.Component {
         for (let i = 0; i < width; i++) {
             entries.push(false);
         }
+        entries[5] = true
         this.state = {
             row: entries,
-            oneTile: false
         }
     }
 
