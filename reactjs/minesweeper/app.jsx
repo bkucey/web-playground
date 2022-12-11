@@ -17,7 +17,7 @@ const BoardRow = (props) =>
 class Board extends React.Component {
     constructor(props) {
         super(props)
-        const width = 5
+        const width = 10
         let entries = []
 
         for (let i = 0; i < width; i++) {
@@ -53,7 +53,6 @@ class Board extends React.Component {
     render() {
         return (
             <div>
-                <p>This is the board.</p>
                 <BoardRow
                     entries={this.state.row}
                     onClick={(i) => {
