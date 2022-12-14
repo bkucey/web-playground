@@ -1,9 +1,10 @@
 import React from "react"
+import * as ReactDOM from 'react-dom'
 
-const Tile = (props) =>
+const Tile = (props: { status: boolean, onClick: () => void }) =>
     <button className={`tile ${props.status ? 'blue' : 'red'}`} onClick={props.onClick} />
 
-const BoardRow = (props) =>
+const BoardRow = (props: { entries: boolean[], onClick: (index: number) => void }) =>
     <div className="row">
         {props.entries.map((value, index) =>
             <Tile
@@ -15,7 +16,7 @@ const BoardRow = (props) =>
     </div>
 
 class Board extends React.Component {
-    constructor(props) {
+    constructor(props: any) {
         super(props)
         const width = 10
         let entries = []
@@ -29,7 +30,7 @@ class Board extends React.Component {
         }
     }
 
-    flipRowAndNeighbors = (i) => {
+    flipRowAndNeighbors = (i:number) => {
         //console.log(`called this.flipRowAndNeighbors (${i})`);
         this.setState((state, props) => {
             //console.log(`flipRowAndNeighbors state ${JSON.stringify(state)}`);
