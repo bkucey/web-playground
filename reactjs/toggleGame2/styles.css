@@ -1,0 +1,12 @@
+.tile{
+    height:50px;
+    width:50px;
+}
+
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+}
