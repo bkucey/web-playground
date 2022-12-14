@@ -1,3 +1,5 @@
+import React from "react"
+
 const Tile = (props) =>
     <button className={`tile ${props.status ? 'blue' : 'red'}`} onClick={props.onClick} />
 
