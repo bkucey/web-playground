@@ -19,29 +19,32 @@ class Board extends React.Component {
         let entries = []
 
         for (let i = 0; i < width; i++) {
-            entries.push(false);
+            entries.push([]);
+            for (let j = 0; j < width; j++) {
+                entries[i].push(false);
+            }
         }
-        entries[5] = true
+        entries[4][4] = true;
         this.state = {
-            row: entries,
+            entries: entries,
         }
     }
 
-    flipRowAndNeighbors = (i) => {
-        //console.log(`called this.flipRowAndNeighbors (${i})`);
+    flipRowAndNeighbors = (row, col) => {
         this.setState((state, props) => {
-            //console.log(`flipRowAndNeighbors state ${JSON.stringify(state)}`);
-            const indicesToChange = [i - 1, i, i + 1];
-            let newRow = state.row.map(x => x);
-            for (const index of indicesToChange) {
-                //console.log(`considering index:${index}`);
-                if (0 <= index && index < newRow.length) {
-                    //console.log(`index ${index} valid, switching`)
-                    newRow[index] = !newRow[index];
+            for (let i = -1; i <= 1; i++) {
+                const newRow = row + i;
+                if (0 <= newRow && newRow < state.entries.length) {
+                    for (let j = -1; j <= 1; j++) {
+                        const newCol = col + j;
+                        if (0 <= newCol && newCol < state.entries[newRow].length) {
+                            state.entries[newRow][newCol] = !state.entries[newRow][newCol];
+                        }
+                    }
                 }
             }
             const output = {
-                row: newRow
+                entries: state.entries,
             };
             //console.log(`flipRowAndNeighbors new state ${JSON.stringify(output)}`);
             return output
@@ -51,12 +54,13 @@ class Board extends React.Component {
     render() {
         return (
             <div>
-                <BoardRow
-                    entries={this.state.row}
-                    onClick={(i) => {
-                        this.flipRowAndNeighbors(i)
-                    }}
-                />
+                {this.state.entries.map((row, index) =>
+                    <BoardRow
+                        key={index}
+                        entries={row}
+                        onClick={(col) => { this.flipRowAndNeighbors(index, col) }}
+                    />
+                )}
             </div>
         )
     }
