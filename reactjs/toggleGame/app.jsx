@@ -12,23 +12,7 @@ const BoardRow = (props) =>
         )}
     </div>
 
-const Board = (props) =>
-    <div>
-        {this.state.entries.map((row, index) =>
-            <BoardRow
-                key={index}
-                entries={row}
-                onClick={(col) => { props.onClick(index, col) }}
-            />
-        )}
-    </div>
-
-
-
-
-
-
-class App extends React.Component {
+class Board extends React.Component {
     constructor(props) {
         super(props)
         const width = 10
@@ -68,9 +52,43 @@ class App extends React.Component {
     }
 
     render() {
-        return <Board onClick={this.flipRowAndNeighbors} />
+        return (
+            <div>
+                {this.state.entries.map((row, index) =>
+                    <BoardRow
+                        key={index}
+                        entries={row}
+                        onClick={(col) => { this.flipRowAndNeighbors(index, col) }}
+                    />
+                )}
+            </div>
+        )
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const App = () =>
+    <Board />
+
+
+
+
+
 
 
 
